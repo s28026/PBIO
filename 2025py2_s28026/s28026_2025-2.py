@@ -1,9 +1,7 @@
-import io
-
 from Bio import Entrez as E, SeqIO
-import matplotlib.pyplot as P, csv
+import matplotlib.pyplot as P, csv, io
 
-E.email, E.api_key, E.tool = input(), input(), 'T'
+E.email, E.api_key = input(), input()
 mnl, mxl, tid, n = map(int, [input(), input(), input(), input()])
 
 s = E.read(E.esearch("nucleotide", term=f"txid{tid}[Organism]", usehistory="y"))
